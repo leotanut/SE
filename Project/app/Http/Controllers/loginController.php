@@ -17,7 +17,7 @@ class loginController extends Controller
    public function login(Request $login){
       $user = $login->input('user_login');
       $pwd = $login->input('pwd');
-
+   
       $check = DB::table('user')->where('user_login', '=', $user)->first();
 
       if($check === null){
