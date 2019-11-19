@@ -10,13 +10,11 @@ table {
   border: 1px solid #ddd;
  
 }
-
 th, td {
   border: 1px solid #ddd;
   text-align: center;
   padding: 20px 1px 20px 1px;
 }
-
 .choose{
         position:relative;
         padding: 20px;
@@ -36,6 +34,42 @@ th, td {
         color: white;
         width:100%;
     }
+
+    * {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+  
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}    
 </style>
 
 <h1 style="text-align:center; padding: 10px;" >My Timetable</h1>
@@ -139,5 +173,28 @@ th, td {
     </tr>
   </table>
 </div>
+
+
+<div class ="container">
+<h2 style="text-align:center; padding: 10px;" >Add course</h2>
+<form action="addSearch" method="post">
+<input type="text" id="myInput" name="subj_id" placeholder="Please enter SUBJECT ID here...">
+<input type="submit" class="btn" value="Search"> 
+
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:30%;">Course ID</th>
+    <th style="width:70%;">Name</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+</form>
+</div>
+
 
 @stop
