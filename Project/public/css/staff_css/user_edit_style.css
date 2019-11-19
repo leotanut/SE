@@ -1,0 +1,75 @@
+#profile-img{
+	position: absolute;
+	top: 10%; left: 50%;
+	width: 200px; height: 200px;
+	margin-left: -100px;
+	border-radius: 50%;
+}
+
+.edit-form{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 70%;
+    font-size: 20px;
+}
+
+/*scoll bar part*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #CFCFCF;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #898989; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #5D5C5C; 
+}
+
+.title{
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+input[type=text],input[type=password]{
+	width: 35%;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+	font-size:16px;
+}
+
+input[type=submit], input[type=button]{
+	position: relative;
+	padding: 5px 5px;
+	margin-left: 1%;
+	background-color: #2ECC71; 
+	border: 3px solid #2ECC71;
+	border-radius: 5px;   	
+  	text-align: center;
+  	color: white;	
+   	font-size: 14px;  
+   	font-weight: bold;	
+   	width: 70px;	 
+   	cursor: pointer; 	
+}
+
+.pwd{
+	margin-top: 50px; 
+}
+
+.submit{
+	margin-top: 5px; 
+}

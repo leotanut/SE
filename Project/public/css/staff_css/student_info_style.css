@@ -1,0 +1,64 @@
+.search-form{
+	position: relative;
+	top: 15%;
+	margin-left: 5%;
+}
+
+input[type=text]{
+	width: 25%;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+	font-size:16px;
+}
+
+input[type=submit], input[type=button]{
+	position: relative;
+	padding: 5px 5px;
+	margin-left: 1%;
+	background-color: #2ECC71; 
+	border: 3px solid #2ECC71;
+	border-radius: 5px;   	
+  	text-align: center;
+  	color: white;	
+   	font-size: 14px;  
+   	font-weight: bold;	
+   	width: 7%;	 
+   	cursor: pointer; 	
+}
+
+#student-line{
+	position: relative;
+	margin-top: 65px;
+ 	width: 90%;
+}
+
+.content-wrapper{
+	position: relative;
+	top: 5%; left: 5%;
+	width: 50%; height: auto;
+	padding: 3%;
+	background-color: white;
+	border: 1px solid #C8C8C8;
+	border-radius: 15px;
+}
+
+th{
+	font-weight: bold;
+	text-align: left;
+	height: 35px;
+	width: 130px;
+}
+
+td{
+	max-width: 400px;
+	overflow-wrap: break-word;
+}
+
+#no-data{
+	font-family: 'Nunito', sans-serif;
+	text-align: center;
+	color: #636b6f;
+	font-weight: bolder;
+	font-size: 24px;
+}
