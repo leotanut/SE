@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\student;
+use DB;
 use Session;
 use Illuminate\Http\Request;
 
@@ -50,7 +51,7 @@ class StudentController extends Controller
 
     public function studentEdit(Request $info){
 
-        $std_id = $info->input('std_id');
+        $user = Session::get('user');
 
         $data = array(
             //db column            //form name
@@ -61,8 +62,8 @@ class StudentController extends Controller
             'address'=> $info->input('address')
         );
 
+        DB::table('students')->where('username', '=', $user)->update($data);
 
-        student::where('std_id', '=', $std_id)->update($data);
         
        echo "<script>window.location.href='user';</script>";
 
