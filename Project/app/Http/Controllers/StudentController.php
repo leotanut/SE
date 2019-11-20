@@ -43,6 +43,11 @@ class StudentController extends Controller
     }
 
     public function editForm(){
+        if(!StudentController::checkLogin()){
+            echo '<script>alert("Please, Login!");';
+            echo 'window.location.href = "/";</script>';
+         }
+
         $user = Session::get('user');
         $info=student::where('username', '=', $user)->first();
 
@@ -50,6 +55,10 @@ class StudentController extends Controller
     }
 
     public function studentEdit(Request $info){
+        if(!StudentController::checkLogin()){
+            echo '<script>alert("Please, Login!");';
+            echo 'window.location.href = "/";</script>';
+         }
 
         $user = Session::get('user');
 
@@ -62,10 +71,39 @@ class StudentController extends Controller
             'address'=> $info->input('address')
         );
 
-        DB::table('students')->where('username', '=', $user)->update($data);
+        if(DB::table('students')->where('username', '=', $user)->update($data)){
+
+        }else{
+
+        }
 
         
        echo "<script>window.location.href='user';</script>";
+
+    }
+
+    public function delete_enroll($subj_id){
+        if(!StudentController::checkLogin()){
+            echo '<script>alert("Please, Login!");';
+            echo 'window.location.href = "/";</script>';
+         }
+
+        $user = Session::get('user');
+        /*DB::table('enroll')
+        ->where('username', '=', $user)
+        ->where('subj_id', '=', $subj_id)
+        ->delete();*/
+
+        if(DB::table('enroll')
+        ->where('username', '=', $user)
+        ->where('subj_id', '=', $subj_id)
+        ->delete()){
+            echo "<script>alert('Delete susceed');";
+            echo "window.location.href='/student';</script>";
+        }else{
+            echo "<script>alert('Delete fail');";
+            echo "window.location.href='/student';</script>";
+        }
 
     }
 
