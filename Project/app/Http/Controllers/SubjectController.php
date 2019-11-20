@@ -66,9 +66,10 @@ class SubjectController extends Controller
 
         $y=$request->get('year');
         $s=$request->get('semester');
-        $subjects = subject::where('year', '=', $y, 'AND', 'semester', '=', $s)->get();
+        $subjects = DB::table('suggest_subject')
+        ->where('year', '=', $y, 'AND', 'semester', '=', $s)->get();
         
-        return view('student.home')
+        return view('student.course')
         ->with('y', $y)
         ->with('s',$s )
         ->with('subjects',$subjects);

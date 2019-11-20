@@ -21,6 +21,9 @@
         color: white;
         width:100%;
     }
+    td,tr{
+      text-align: center;
+    }
 </style>
  <form action="search" method="post">
    <div class="container choose">

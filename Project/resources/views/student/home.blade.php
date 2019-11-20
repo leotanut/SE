@@ -78,7 +78,7 @@ th, td {
   <table>
     <tr>
       <th style="background-color:#ddd;"></th>
-      <th style="background-color:#ddd;">8000-0930</th>
+      <th style="background-color:#ddd;">0800-0930</th>
       <th style="background-color:#ddd;">0930-1100</th>
       <th style="background-color:#ddd;">1100-1230</th>
       <th style="background-color:#ddd;">1300-1430</th>
