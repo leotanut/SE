@@ -97,6 +97,21 @@ class StudentController extends Controller
         }
     }
 
+    public function enroll(Request $request){       
+        $enroll = array(
+            'username'=> Session::get('user'),
+            'subj_id' => $request->input('subj_id'),
+            'section' => $request->input('section')
+        );  
+       if(DB::table('enroll')->insert($enroll)){
+         echo  '<script>alert("Enroll succeed");';
+         echo  'window.location.href="/student";</script>' ;
+       }
+       else{
+        echo  '<script>alert("Enroll Failed");';
+        echo  'window.location.href="/student";</script>' ;
+       }
+    }
     /**
      * Display the specified resource.
      *
