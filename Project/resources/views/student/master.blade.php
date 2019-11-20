@@ -73,8 +73,9 @@
     <a href="#default" class="logo">Timetable Management</a>
     <div class="header-right">
     <a class="active" href="/">Home</a>
-    <a href="user">My account</a>
-    <a href="/logout">logout</a>
+    <a href="course">Course</a>
+    <a href="user">My account</a> 
+    <a href="/logout">Logout</a>
 
   </div>
 </div>

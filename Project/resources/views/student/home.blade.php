@@ -10,13 +10,11 @@ table {
   border: 1px solid #ddd;
  
 }
-
 th, td {
   border: 1px solid #ddd;
   text-align: center;
   padding: 20px 1px 20px 1px;
 }
-
 .choose{
         position:relative;
         padding: 20px;
@@ -36,6 +34,42 @@ th, td {
         color: white;
         width:100%;
     }
+
+    * {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+  
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}    
 </style>
 
 <h1 style="text-align:center; padding: 10px;" >My Timetable</h1>
@@ -141,69 +175,26 @@ th, td {
 </div>
 
 
+<div class ="container">
+<h2 style="text-align:center; padding: 10px;" >Add course</h2>
+<form action="addSearch" method="post">
+<input type="text" id="myInput" name="subj_id" placeholder="Please enter SUBJECT ID here...">
+<input type="submit" class="btn" value="Search"> 
 
 
+<table id="myTable">
+  <tr class="header">
+    <th style="width:30%;">Course ID</th>
+    <th style="width:70%;">Name</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
 
-   <form action="search" method="post">
-   <div class="container choose">
-    <label for="year">Year</label>
-      <select id="year" name="year">
-      @if(isset($y))
-      <option value="{{$y}}" hidden> {{$y}}</option>
-      @endif
-       <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-         <option value="4">4</option>
-     </select>
-
-    <label for="semester">Semester </label>
-    <select id="semester" name="semester">
-     @if(isset($s))
-      <option value="{{$s}}" hidden> {{$s}}</option>
-      @endif
-      <option value="1">1</option>
-      <option value="2">2</option>
-    </select>
-
-    <input class="btn" type="submit" value="Search">
-
-    </div>
-    {{ csrf_field() }}
-   </form>
-
-    <table class="table mt-5">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">Subject ID</th>
-                <th scope="col">Subject name</th>
-                <th scope="col">Year</th>
-                <th scope="col">Semester</th>
-            </tr>
-        </thead>
-        <tbody>
-          <?php $i=0;?>
-            @if(isset($y) && isset($s))
-
-            @foreach($subjects as $subject)
-                <tr>
-                    @if($subject->year==$y&&$subject->semester==$s)
-                    <td>{{$subject->subj_id}}</a></td>
-                    <td>{{$subject->name}}</td>
-                    <td>{{$subject->year}}</td>
-                    <td>{{$subject->semester}}</td>
-                    <?php $i++; ?>
-                    @endif
-                </tr>
-            @endforeach
-
-            @if($i==0)
-            <script>alert("No result");</script>
-            @endif
-
-            @endif
-        </tbody>
-    </table>
+</form>
+</div>
 
 
 @stop
