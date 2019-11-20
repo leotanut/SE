@@ -27,7 +27,7 @@ class StudentController extends Controller
          }
 
         $user = Session::get('user');
-        $student=student::where('username', '=', $user)->first();
+        $student=student::where('username', $user)->first();
         return view('student.user_info',compact('student', $student));
     }
     
@@ -112,6 +112,8 @@ class StudentController extends Controller
         echo  'window.location.href="/student";</script>' ;
        }
     }
+
+   
     /**
      * Display the specified resource.
      *

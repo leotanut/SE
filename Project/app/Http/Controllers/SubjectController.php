@@ -58,12 +58,27 @@ class SubjectController extends Controller
     }
     
     public function addSearch(Request $request){
+        //resource data
         $subj_id=$request->input('subj_id');
+        $user = Session::get('user');
 
+        //query enrolled subjects
+        $enroll = DB::table('enroll')
+        ->where('enroll.username','=',$user)
+        ->leftjoin('subjects',function($join)
+         {
+         $join->on('subjects.subj_id','=','enroll.subj_id');
+         $join->on('subjects.section','=','enroll.section');
+        })
+         ->get();
+
+        //search subject
         $subjects = DB::table('subjects')
         ->where('subj_id', '=', $subj_id)->get();
 
-        return view('student.home',compact('subjects',$subjects));
+        return view('student.home')
+        ->with('enroll',$enroll)
+        ->with('subjects',$subjects);
 
     }
 

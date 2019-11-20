@@ -85,9 +85,8 @@ Route::post('/del_subject' , 'SubjectController@subject_del');
 
 //--------------------- student ------------------------
 
-Route::get('/student', function () {
-    return view('student.home');
-});
+Route::get('/student','pagesController@student');
+
 
 
 Route::get('/course', function () {

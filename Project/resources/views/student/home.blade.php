@@ -72,6 +72,7 @@ th, td {
 }    
 </style>
 
+{{$enroll}}
 <h1 style="text-align:center; padding: 10px;" >My Timetable</h1>
 
 <div class="container" style="overflow-x:auto;">
