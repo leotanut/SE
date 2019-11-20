@@ -22,7 +22,9 @@ class pagesController extends Controller
       })
       ->get();
 
-      return view('student.home',compact('enroll',$enroll));
+      return view('student.home')
+      ->with('enroll',$enroll);
+      
    }
 
    public function checkLogin(){
