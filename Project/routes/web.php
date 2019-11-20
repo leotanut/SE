@@ -93,6 +93,8 @@ Route::get('/course', function () {
     return view('student.course');
 });
 
+Route::get('/course','pagesController@show_course');
+
 Route::get('/userEdit','StudentController@editForm');
 
 Route::post('/studentEdit','StudentController@studentEdit');
