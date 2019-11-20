@@ -109,6 +109,8 @@ Route::post('search','SubjectController@search');
 
 Route::post('enroll','StudentController@enroll');
 
+Route::get('/del/{subj_id}','StudentController@delete_enroll');
+
 
 //----------------------------------------------------------
 /* Other */
