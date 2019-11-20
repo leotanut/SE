@@ -13,6 +13,13 @@
 <style>
 
 /* Style the header with a grey background and some padding */
+.nav_bar{
+  position:fixed;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+  width:100%
+}
+
 .header {
   overflow: hidden;
   background-color: #f1f1f1;
@@ -70,7 +77,7 @@
 </head>
 <body>
     <div class="header">
-    <a href="#default" class="logo">Timetable Management</a>
+    <a href="/student" class="logo">Timetable Management</a>
     <div class="header-right">
     <a class="active" href="/">Home</a>
     <a href="course">Course</a>
