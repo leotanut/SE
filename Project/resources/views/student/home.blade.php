@@ -95,12 +95,24 @@ th, td {
 .subject_wraper{
     position: absolute;
     top: 231px;
-    left: 154px;
+    left: 189px;
     height: 455px;
     width: 1111px;
     /*background-color: yellow;*/
 
 
+}
+
+.del{
+  position: absolute;
+  right: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  color: black;
+}
+
+.del:hover{
+  transform: scale(1.4);
 }
 
 .subject{
@@ -134,26 +146,48 @@ th, td {
     @if($i->day == "M,Th")
 
       @if($i->start_time == 800)
+
         <div class="subject" style="top:0px; left:0px; background-color: <?php echo $color[$index]; ?>;">
+         <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>
 
+
+        
+
         <div class="subject" style="top:195px; left:0px; background-color: <?php echo $color[$index]; ?>;">
+
+       <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>  
 
       @elseif($i->start_time == 930)
+
+       
+
         <div class="subject" style="top:0px; left:138px; background-color: <?php echo $color[$index]; ?>;">
+        <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>
 
+      
+
         <div class="subject" style="top:195px; left:138px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
@@ -161,78 +195,125 @@ th, td {
 
 
       @elseif($i->start_time == 1100)
+
         <div class="subject" style="top:0px; left:277px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>
 
+
         <div class="subject" style="top:195px; left:277px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>  
 
       @elseif($i->start_time == 1300)
+
         <div class="subject" style="top:0px; left:416px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>
 
+
         <div class="subject" style="top:195px; left:416px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div> 
 
       @elseif($i->start_time == 1430)
+
         <div class="subject" style="top:0px; left:555px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>
 
+
         <div class="subject" style="top:195px; left:555px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>  
 
       @elseif($i->start_time == 1600)
+
         <div class="subject" style="top:0px; left:694px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>
 
+
         <div class="subject" style="top:195px; left:694px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>  
 
       @elseif($i->start_time == 1730)
+
         <div class="subject" style="top:0px; left:833px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>
 
         <div class="subject" style="top:195px; left:833px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>  
 
       @elseif($i->start_time == 1900)
+
         <div class="subject" style="top:0px; left:972px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>
 
+
         <div class="subject" style="top:195px; left:972px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
@@ -242,26 +323,41 @@ th, td {
     @elseif($i->day == "Tu,F")
 
       @if($i->start_time == 800)
+
         <div class="subject" style="top:65px; left:0px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>
 
         <div class="subject" style="top:260px; left:0px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>  
 
       @elseif($i->start_time == 930)
+
         <div class="subject" style="top:65px; left:138px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>
 
+
         <div class="subject" style="top:260px; left:138px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
@@ -269,78 +365,122 @@ th, td {
 
 
       @elseif($i->start_time == 1100)
+
         <div class="subject" style="top:65px; left:277px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>
 
         <div class="subject" style="top:260px; left:277px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>  
 
       @elseif($i->start_time == 1300)
+
         <div class="subject" style="top:65px; left:416px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>
 
+
         <div class="subject" style="top:260px; left:416px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div> 
 
       @elseif($i->start_time == 1430)
+
         <div class="subject" style="top:65px; left:555px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>
 
         <div class="subject" style="top:260px; left:555px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>  
 
       @elseif($i->start_time == 1600)
+
         <div class="subject" style="top:65px; left:694px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>
 
         <div class="subject" style="top:260px; left:694px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>  
 
       @elseif($i->start_time == 1730)
+
         <div class="subject" style="top:65px; left:833px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>
 
+
         <div class="subject" style="top:260px; left:833px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>  
 
       @elseif($i->start_time == 1900)
+
         <div class="subject" style="top:65px; left:972px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>
 
         <div class="subject" style="top:260px; left:972px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
@@ -349,13 +489,21 @@ th, td {
       <!--//if Tu,F -->
     @elseif($i->day == "We")
       @if($i->start_time == 900)
+
       <div class="subject" style="top:130px; left:92px; width:277px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
         </div>
       @elseif($i->start_time == 1300)
+
       <div class="subject" style="top:130px; left:416px; width:277px; background-color: <?php echo $color[$index]; ?>;">
+  <a href="/del/{{$i->subj_id}}">
+          <span class="del" title="Delete subject">x</span>
+        </a>
         {{$i->subj_id}} <br>
         {{$i->name}} <br>
         sec {{$i->section}}
