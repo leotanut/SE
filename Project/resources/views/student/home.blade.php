@@ -176,7 +176,7 @@ th, td {
 
 
 <div class ="container">
-<h2 style="text-align:center; padding: 10px;" >Add course</h2>
+<h2 style="text-align:center; padding: 10px;" >Add Course</h2>
 <form action="addSearch" method="post">
 <input type="text" id="myInput" name="subj_id" placeholder="Please enter SUBJECT ID here...">
 <input type="submit" class="btn" value="Search"> 
@@ -184,10 +184,17 @@ th, td {
 
 <table id="myTable">
   <tr class="header">
-    <th style="width:30%;">Course ID</th>
-    <th style="width:70%;">Name</th>
+    <th style="width:15%;">Course ID</th>
+    <th style="width:40%;">Name</th>
+    <th style="width:15%">Section</th>
+    <th style="width:15%">Date</th>
+    <th style="width:15%">Time</th>
+
   </tr>
   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
     <td></td>
     <td></td>
   </tr>
