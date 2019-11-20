@@ -95,7 +95,7 @@ th, td {
 .subject_wraper{
     position: absolute;
     top: 231px;
-    left: 189px;
+    left: 154px;
     height: 455px;
     width: 1111px;
     /*background-color: yellow;*/
