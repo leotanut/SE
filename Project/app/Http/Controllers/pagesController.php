@@ -33,4 +33,12 @@ class pagesController extends Controller
 
          return view('staff.student_info');
       }
+
+      function show_course(){
+         if(!pagesController::checkLogin()){
+            pagesController::login();
+         }
+
+         return view('student.course');
+      }
 }

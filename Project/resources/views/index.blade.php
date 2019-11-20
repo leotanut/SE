@@ -2,8 +2,9 @@
 
   <head>
     <link rel="stylesheet" type="text/css" href="/css/index_style.css">
+    <title>Timetable Management</title>
   </head>
-
+  
   <body>
 
     @if(Session::has('role'))
@@ -13,8 +14,13 @@
         <?php echo "<script>window.location.href='/management';</script>"; ?>
       @endif
     @endif
-
-    <div class="picbar"></div>
+    
+    
+   
+    <div class="picbar">
+      <img src = "img/cmu_logo.png" style="width:200px;height:200px; position: absolute;left: 50px; top: 20px;z-index: 1;">
+      <img src = "img/clock2.jpg" style="opacity: 0.3; width: 300px; height: 100%;position: absolute;">
+    </div>
 
     <form method="post" class="login-form" action="/user_login">
 
