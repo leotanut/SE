@@ -56,6 +56,16 @@ class SubjectController extends Controller
     {
         //
     }
+    
+    public function addSearch(Request $request){
+        $subj_id=$request->input('subj_id');
+
+        $subjects = DB::table('subjects')
+        ->where('subj_id', '=', $subj_id)->get();
+
+        return view('student.home',compact('subjects',$subjects));
+
+    }
 
     public function search(Request $request){
         if(!SubjectController::checkLogin()){

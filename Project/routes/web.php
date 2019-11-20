@@ -82,6 +82,7 @@ Route::post('/subject_add' , 'SubjectController@subject_add');
 Route::post('/del_subject' , 'SubjectController@subject_del');
 
 
+
 //--------------------- student ------------------------
 
 Route::get('/student', function () {
@@ -99,10 +100,13 @@ Route::post('/studentEdit','StudentController@studentEdit');
 
 Route::resource('user','StudentController');
 
+Route::post('/addSearch','SubjectController@addSearch');
 
 Route::resource('subjects','SubjectController');
 
 Route::post('search','SubjectController@search');
+
+Route::post('enroll','StudentController@enroll');
 
 
 //----------------------------------------------------------

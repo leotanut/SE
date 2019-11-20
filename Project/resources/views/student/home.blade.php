@@ -176,24 +176,47 @@ th, td {
 
 
 <div class ="container">
-<h2 style="text-align:center; padding: 10px;" >Add course</h2>
+<h2 style="text-align:center; padding: 10px;" >Add Course</h2>
 <form action="addSearch" method="post">
 <input type="text" id="myInput" name="subj_id" placeholder="Please enter SUBJECT ID here...">
 <input type="submit" class="btn" value="Search"> 
 
-
+{{csrf_field()}}
+</form>
+@if(isset($subjects))
 <table id="myTable">
   <tr class="header">
-    <th style="width:30%;">Course ID</th>
-    <th style="width:70%;">Name</th>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+    <th style="width:15%;">Course ID</th>
+    <th style="width:40%;">Name</th>
+    <th style="width:10%">Section</th>
+    <th style="width:15%">Date</th>
+    <th style="width:15%">Time</th>
+    <th style="width:5%"></th>
 
+  </tr>
+  <form action="enroll" method="post">
+  @foreach($subjects as $subject)
+  <tr>
+    <td>{{$subject->subj_id}}</td>
+    <td>{{$subject->name}}</td>
+    <td>{{$subject->section}}</td>
+    <td>{{$subject->day}}</td>
+    <td>{{$subject->start_time.'-'.$subject->end_time}} </td>
+    <input type="text" name ="subj_id" value="{{$subject->subj_id}}" hidden>
+    <input type="text" name ="name" value="{{$subject->name}}" hidden>
+    <input type="text" name ="section" value="{{$subject->section}}" hidden>
+    <input type="text" name ="day" value="{{$subject->day}}" hidden>
+    <input type="text" name ="start_time" value="{{$subject->start_time}}" hidden>
+    <input type="text" name ="end_time" value="{{$subject->end_time}}" hidden>
+    <td><input type="submit" class ="btn" value="ADD"></td>
+  </tr>
+  @endforeach
+</table>
+@endif
+{{csrf_field()}}
 </form>
+
+
 </div>
 
 
