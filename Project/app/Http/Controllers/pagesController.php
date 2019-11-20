@@ -1,12 +1,29 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
 use Session;
 use Illuminate\Http\Request;
 
 class pagesController extends Controller
 {
+   public function student(){
+      if(!pagesController::checkLogin()){
+         pagesController::login();
+      }
+      
+      $user = Session::get('user');
+      $enroll = DB::table('enroll')
+      ->where('enroll.username','=',$user)
+      ->leftjoin('subjects',function($join)
+      {
+         $join->on('subjects.subj_id','=','enroll.subj_id');
+         $join->on('subjects.section','=','enroll.section');
+      })
+      ->get();
+
+      return view('student.home',compact('enroll',$enroll));
+   }
 
    public function checkLogin(){
          if(Session::has('role')) return true;
