@@ -140,8 +140,16 @@ class StudentController extends Controller
             'username'=> Session::get('user'),
             'subj_id' => $request->input('subj_id'),
             'section' => $request->input('section')
-        );  
-       if(DB::table('enroll')->insert($enroll)){
+        ); 
+
+       $check = DB::table('enroll')
+       ->where('username', Session::get('user'))
+       ->where('subj_id', $request->input('subj_id'))->first();
+
+        
+       if($check === null){
+
+         if(DB::table('enroll')->insert($enroll)){
          echo  '<script>alert("Enroll succeed");';
          echo  'window.location.href="/student";</script>' ;
        }
@@ -149,6 +157,13 @@ class StudentController extends Controller
         echo  '<script>alert("Enroll Failed");';
         echo  'window.location.href="/student";</script>' ;
        }
+
+       }
+        else{
+                    echo  '<script>alert("This subject has already enrolled");';
+         echo  'window.location.href="/student";</script>' ;
+        }
+       
     }
 
    
