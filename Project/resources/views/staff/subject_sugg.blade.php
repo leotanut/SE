@@ -30,20 +30,22 @@
 	</form>
 	<hr id="subject-line">
 
-	<form method="post" action="/subject_add" class="form-add">
-		<span id="add-title">{{trans('message.add_subject') }}</span>
-		<div class="add-input">
-			@if(isset($y))
-				<input type="text" name="year" value="{{$y}}" hidden>
-				<input type="text" name="semester" value="{{$s}}" hidden>
-			@endif
-			<input type="text" name="subj_id" placeholder="{{trans('message.add_sub_id') }}">
-			<input type="text" name="subj_name" placeholder="{{trans('message.add_sub_name') }}"> <br/>
-			<input type="submit" name="submit" value="{{trans('message.submit') }}" id="btn-add">
-		</div>
+	@if(isset($y))
+		<form method="post" action="/subject_add" class="form-add">
+			<span id="add-title">{{trans('message.add_subject') }}</span>
+			<div class="add-input">
+				@if(isset($y))
+					<input type="text" name="year" value="{{$y}}" hidden>
+					<input type="text" name="semester" value="{{$s}}" hidden>
+				@endif
+				<input type="text" name="subj_id" placeholder="{{trans('message.add_sub_id') }}">
+				<input type="text" name="subj_name" placeholder="{{trans('message.add_sub_name') }}"> <br/>
+				<input type="submit" name="submit" value="{{trans('message.submit') }}" id="btn-add">
+			</div>
 
-		{{ csrf_field() }}
-	</form>
+			{{ csrf_field() }}
+		</form>
+	@endif
 
 	@if(isset($found) && !found)
 		<div class="subject">

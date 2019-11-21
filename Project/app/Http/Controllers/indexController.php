@@ -57,6 +57,9 @@ class indexController extends Controller
                      'lname' => $info->input('surname'),
                      'username' => $info->input('username')
                   );
+                  
+                  DB::table('staff')->where('username', '=', $user_login)->update($data);
+
 
                }
                else{
@@ -64,11 +67,15 @@ class indexController extends Controller
                      'fname' => $info->input('name'),
                      'lname' => $info->input('surname'),
                      'username' => $info->input('username'),
-                     'pwd' => $info->input('new_pwd')
                   );
+
+                  $pwd = $info->input('new_pwd');
+
+                  DB::table('staff')->where('username', '=', $user_login)->update($data);
+                  DB::table('user')->where('user_login', '=', $user_login)->update(['pwd'=>$pwd]);
                }
 
-               DB::table('staff')->where('username', '=', $user_login)->update($data);
+               
 
                echo "<script>alert('update successfully!');";
                echo 'window.location.href = "/";</script>';
